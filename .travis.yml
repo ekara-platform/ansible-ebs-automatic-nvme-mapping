@@ -1,0 +1,13 @@
+---
+language: python
+
+before_install:
+# Make sure everything's up to date.
+- sudo apt-get update -qq
+- sudo apt-get install -qq python-pip
+- sudo pip install yamllint
+
+install: true
+
+script:
+- find . -name '*.yml'| xargs -n1 yamllint
